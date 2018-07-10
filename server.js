@@ -31,7 +31,8 @@ app.get('/osuapi', (req, res) => {
     var printdata = {};
     var urls = [];
     for (i = 0; i < 4; i++) {
-      urls[i] = `https://osu.ppy.sh/api/get_user?k=${process.env.API_KEY}&u=${req.query.u}&type=string&m=${i}`;
+      
+      urls[i] = `https://osu.ppy.sh/api/get_user?k=${process.env.API_KEY}&u=${encodeURIComponent(req.query.u)}&type=string&m=${i}`;
       //console.log(`Req var: ${req.query.u}, Api url id ${i}`);
     }
     __request(urls, (responses) => {
