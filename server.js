@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var request = require('request');
 var RateLimit = require('express-rate-limit');
-var cron = require('node-cron');
 
 // __request algorithm create by natos (https://github.com/natos/)
 var __request = (urls, callback) => {
@@ -57,9 +56,10 @@ app.get('/osuapi', (req, res) => {
   }
 });
 
-cron.schedule('*/1 * * * *', () => {
-  console.log('Awake')
-})
+var http = require("http");
+setInterval(() => {
+    http.get("http://osu-koko.herokuapp.com");
+}, 300000)
 
 
 app.listen(process.env.PORT || 3000, () => {
