@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var request = require('request');
 var RateLimit = require('express-rate-limit');
+var cron = require('node-cron');
 
 // __request algorithm create by natos (https://github.com/natos/)
 var __request = (urls, callback) => {
@@ -55,6 +56,11 @@ app.get('/osuapi', (req, res) => {
     res.send("{}");
   }
 });
+
+cron.schedule('*/1 * * * *', () => {
+  console.log('Awake')
+})
+
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server ready");
