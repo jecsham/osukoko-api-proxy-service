@@ -1,17 +1,20 @@
 {
-  "name": "osuapirequest",
-  "version": "1.1.1",
-  "description": "Request api from osu to koko chan extension",
+  "name": "osukoko-page",
+  "version": "2.0.0",
+  "description": "API request to osu! for osu! koko extension",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "Jecsham",
-  "license": "MIT",
   "dependencies": {
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-rate-limit": "^2.11.0",
-    "request": "^2.87.0"
+    "mongoose": "^5.2.3",
+    "request": "^2.87.0",
+    "serve-favicon": "^2.5.0"
   }
 }
