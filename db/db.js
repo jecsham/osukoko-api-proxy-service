@@ -1,6 +1,6 @@
 'use strict'
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
 
 //name = osu username
 const

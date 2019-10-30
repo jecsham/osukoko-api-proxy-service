@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "name": "osukoko-api-proxy-service",
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@now/node-server"
+        }
+    ],
+    "routes": [
+        {
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+            },
+            "src": "/.*",
+            "dest": "/server.js"
+        }
+    ],
+    "env": {
+        "MONGODB_URI": "@mongodb-uri",
+        "OSU_API_KEY": "@osu-api-key"
+    }
+}
