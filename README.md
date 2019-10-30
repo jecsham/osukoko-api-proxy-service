@@ -1,2 +1,2 @@
-# osukoko-page
-Site source code
+# osukoko-api-proxy-service
+Proxy server for osukoko extension
